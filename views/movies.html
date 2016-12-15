@@ -1,14 +1,15 @@
 <body>
     <ul class="list-group" >
-
+        <!-- Page controll-->
         <button type="button" ng-init="currentPage=1" class="btn btn-primary" ng-disabled="currentPage == 1" ng-click="previousPage()">Previous Page</button>
         <button type="button" class="btn btn-primary" ng-click="nextPage()">Next Page</button>
 
         <br>
         <br>
-        <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp"  y ng-repeat="movie in movies" >{{movie.title}}
+        <!-- Movie Item -->
+        <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp" ng-repeat="movie in movies" >{{movie.title}}
         </button>
-
+        <!-- Pop Up with description of the selected movie-->
         <div id="popUp" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
