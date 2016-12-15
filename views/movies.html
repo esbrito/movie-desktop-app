@@ -1,16 +1,29 @@
 <body>
-    {{showInfo}}
     <ul class="list-group" >
-        <button class="list-group-item list-group-item-info"   ng-init="showInfo = false;" ng-click="showInfo = !showInfo; getGenre(movie)" ng-repeat="movie in movies" >{{movie.title}}
-            <div ng-show="showInfo">
-                <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}"> <br>
-                <h6>Original Title:</h6> <p>{{movie.original_title}}</p>
-                <h6>Genre:</h6> <p>{{currentMovieGenres}}</p>
-                <h6>Overview:</h6> <p>{{movie.overview}}</p>
-                <h6>Release Date:</h6> <p>{{movie.release_date}}</p>
-            </div>
-
+        <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp"  y ng-repeat="movie in movies" >{{movie.title}}
         </button>
+
+        <div id="popUp" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button  type="button" class="close"  data-dismiss="modal"></button>
+                        <h4 class="modal-title">Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{currentMovie.poster_path}}"> <br>
+                        <h4>Original Title:</h4> <p>{{currentMovie.original_title}}</p>
+                        <h4>Genre:</h4> <p>{{currentMovie.currentGenres}}</p>
+                        <h4>Overview:</h4> <p>{{currentMovie.overview}}</p>
+                        <h4>Release Date:</h4> <p>{{currentMovie.release_date}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </ul>
