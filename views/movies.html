@@ -1,8 +1,18 @@
 <body>
-    <ul>
-        <li ng-repeat="movie in movies">
-            <h6>Title: {{movie.title}}</h1>
+    {{showInfo}}
+    <ul class="list-group" >
+        <button class="list-group-item list-group-item-info"   ng-init="showInfo = false;" ng-click="showInfo = !showInfo; getGenre(movie)" ng-repeat="movie in movies" >{{movie.title}}
+            <div ng-show="showInfo">
+                <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}"> <br>
+                <h6>Original Title:</h6> <p>{{movie.original_title}}</p>
+                <h6>Genre:</h6> <p>{{currentMovieGenres}}</p>
+                <h6>Overview:</h6> <p>{{movie.overview}}</p>
+                <h6>Release Date:</h6> <p>{{movie.release_date}}</p>
+            </div>
 
-        </li>
+        </button>
+
+
     </ul>
+
 </body>
