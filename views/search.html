@@ -4,14 +4,17 @@
     </div>
     <ul class="list-group" >
         <div align="center">
-            <input  class="img-rounded" type="text" ng-model="query" placeholder="  Search..." /><span>  </span><button type="button" class="btn btn-primary" ng-click="search(query)">Search</button>
+            <form ng-submit="search(query)" >
+                <input  class="img-rounded" type="text" ng-model="query" placeholder="  Search..." /><span>  </span>
+                <button type="submit" class="btn fa fa-search" ></button>
+            </form>
         </div>
 
         <br>
         <br>
         <ul class="pager">
-            <li><a type="button" ng-init="currentPageSearch=1"  ng-disabled="currentPageSearch <= 1" ng-click="previousPage(query)">Previous Page</a></li>
-            <li><a type="button" ng-click="nextPage(query)">Next Page</a></li>
+            <li><a type="button" ng-init="currentPageSearch=1"  ng-disabled="currentPageSearch <= 1" ng-click="previousPage(query)" style="cursor:pointer;">Previous Page</a></li>
+            <li><a type="button" ng-click="nextPage(query)" style="cursor:pointer;">Next Page</a></li>
         </ul>
         <!-- Movie Item -->
         <div class="container">
@@ -56,5 +59,6 @@
 
 
 </ul>
+<p style="text-align: center; color: white">Page {{currentPageSearch}}</p>
 
 </body>

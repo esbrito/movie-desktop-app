@@ -1,11 +1,12 @@
 <body>
+    <div class="alert alert-info" ng-if="query == undefined || query == ''  ">
+        <strong>Upcoming Movies!</strong> You can see which movies are going ot be released soon!
+    </div>
     <ul class="list-group" >
         <!-- Page controll-->
-
-
         <ul class="pager">
-            <li><a type="button" ng-init="currentPage=1"  ng-disabled="currentPage <= 1" ng-click="previousPage()">Previous Page</a></li>
-            <li><a type="button" ng-click="nextPage()">Next Page</a></li>
+            <li><a type="button" ng-init="currentPage=1"  ng-disabled="currentPage <= 1" ng-click="previousPage()" style="cursor:pointer;">Previous Page</a></li>
+            <li><a type="button" ng-click="nextPage()" style="cursor:pointer;">Next Page</a></li>
         </ul>
         <br>
         <br>
@@ -53,5 +54,6 @@
 
 
     </ul>
+    <p style="text-align: center; color: white">Page {{currentPage}}</p>
 
 </body>
