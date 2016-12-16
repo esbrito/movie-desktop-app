@@ -4,10 +4,6 @@ app.config(function($routeProvider) {
         templateUrl : "views/home.html",
         controller: 'homeCtrl'
     })
-    .when("/about", {
-        templateUrl : "views/about.html",
-        controller: 'aboutCtrl'
-    })
     .when("/movies", {
         templateUrl : "views/movies.html",
         controller: 'moviesCtrl'
