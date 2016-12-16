@@ -1,14 +1,30 @@
 <body>
     <ul class="list-group" >
         <!-- Page controll-->
-        <button type="button" ng-init="currentPage=1" class="btn btn-primary" ng-disabled="currentPage == 1" ng-click="previousPage()">Previous Page</button>
-        <button type="button" class="btn btn-primary" ng-click="nextPage()">Next Page</button>
 
+
+        <ul class="pager">
+            <li><a type="button" ng-init="currentPage=1"  ng-disabled="currentPage <= 1" ng-click="previousPage()">Previous Page</a></li>
+            <li><a type="button" ng-click="nextPage()">Next Page</a></li>
+        </ul>
         <br>
         <br>
         <!-- Movie Item -->
-        <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp" ng-repeat="movie in movies" >{{movie.title}}
-        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4" ng-repeat="movie in movies">
+                    <div >
+                        <div class="thumbnail">
+                            <img  width="100px" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}">
+                            <div class="caption">
+                                <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp"  >{{movie.title}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Pop Up with description of the selected movie-->
         <div id="popUp" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -19,14 +35,16 @@
                         <h4 class="modal-title">Details</h4>
                     </div>
                     <div class="modal-body">
-                        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{currentMovie.poster_path}}"> <br>
-                        <h4>Original Title:</h4> <p>{{currentMovie.original_title}}</p>
-                        <h4>Genre:</h4> <p>{{currentMovie.currentGenres}}</p>
-                        <h4>Overview:</h4> <p>{{currentMovie.overview}}</p>
-                        <h4>Release Date:</h4> <p>{{currentMovie.release_date}}</p>
+                        <div align="center">
+                            <img  ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{currentMovie.poster_path}}"> <br>
+                        </div>
+                        <h4><b>Original Title</b></h4> <p>{{currentMovie.original_title}}</p>
+                        <h4><b>Genre</b></h4> <p>{{currentMovie.currentGenres}}</p>
+                        <h4><b>Overview</b></h4> <p>{{currentMovie.overview}}</p>
+                        <h4><b>Release Date</b></h4> <p>{{currentMovie.release_date}}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

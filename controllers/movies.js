@@ -37,7 +37,8 @@ app.controller('moviesCtrl', ['$scope','$http',function($scope, $http) {
 
     /* Get movies list of the previous page */
     $scope.previousPage = function(){
-        $scope.currentPage = $scope.currentPage - 1;
+        if($scope.currentPage != 1)
+            $scope.currentPage = $scope.currentPage - 1;
         $http.get("https://api.themoviedb.org/3/movie/upcoming?page="+ $scope.currentPage + "&language=en-US&api_key=c5850ed73901b8d268d0898a8a9d8bff").success(function(data) {
             $scope.movies = data.results
         });

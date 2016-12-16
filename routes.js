@@ -1,10 +1,12 @@
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "views/home.html"
+        templateUrl : "views/home.html",
+        controller: 'homeCtrl'
     })
     .when("/about", {
-        templateUrl : "views/about.html"
+        templateUrl : "views/about.html",
+        controller: 'aboutCtrl'
     })
     .when("/movies", {
         templateUrl : "views/movies.html",
@@ -15,6 +17,7 @@ app.config(function($routeProvider) {
         controller: 'searchCtrl'
     })
     .when("/contact", {
-        templateUrl : "views/contact.html"
+        templateUrl : "views/contact.html",
+        controller: 'contactCtrl'
     });
 });

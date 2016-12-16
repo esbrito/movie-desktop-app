@@ -2,7 +2,7 @@ app.controller('searchCtrl', ['$scope','$http',function($scope, $http) {
 
     /* Searches for the 'query' string received by the function */
     $scope.search = function(query){
-        $http.get("https://api.themoviedb.org/3/search/movie?api_key=c5850ed73901b8d268d0898a8a9d8bff&query="+ query + "&page=1&include_adult=false").success(function(data) {
+        $http.get("https://api.themoviedb.org/3/search/movie?api_key=c5850ed73901b8d268d0898a8a9d8bff&query="+ query + "&page="+ $scope.currentPageSearch +"&include_adult=false").success(function(data) {
             $scope.movies = data.results
         });
     }
@@ -29,6 +29,21 @@ app.controller('searchCtrl', ['$scope','$http',function($scope, $http) {
 
     }
 
+    /* Get movies list of the next page */
+    $scope.nextPage = function(query){
+        $scope.currentPageSearch = $scope.currentPageSearch + 1;
+        $http.get("https://api.themoviedb.org/3/search/movie?api_key=c5850ed73901b8d268d0898a8a9d8bff&query="+ query + "&page="+ $scope.currentPageSearch +"&include_adult=false").success(function(data) {
+            $scope.movies = data.results
+        });
+    }
 
+    /* Get movies list of the previous page */
+    $scope.previousPage = function(query){
+        if($scope.currentPageSearch != 1)
+            $scope.currentPageSearch = $scope.currentPageSearch - 1;
+        $http.get("https://api.themoviedb.org/3/search/movie?api_key=c5850ed73901b8d268d0898a8a9d8bff&query="+ query + "&page="+ $scope.currentPageSearch +"&include_adult=false").success(function(data) {
+            $scope.movies = data.results
+        });
+    }
 
 }]);

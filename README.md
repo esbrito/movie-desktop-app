@@ -8,3 +8,6 @@ It is a website to look for upcoming movies or search a specific movie for detai
 
 **How to deploy?**
 To deploy it only needs to run a simple HTTP server in the main folder. If you are in Ubuntu, for example, you can use _python -m SimpleHTTPServer_ to start a local server.
+
+**Licenses**
+All images were taken from website Pexels (_pexels.com_) under the *Creative Commons Zero (CC0) license*
