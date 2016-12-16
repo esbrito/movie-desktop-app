@@ -8,6 +8,7 @@ It is a website to look for upcoming movies or search a specific movie for detai
 
  * AngularJS and AngularRoutes: for the controllers and link the view with the controllers. Also, it was used to easly change views showed in _index.html_ according to what is described in _routes.js_
  * Boostrap and JQuery: For a goodlooking, userfriendly and responsive interface
+ * Fonts Awesome: For some amazing icons. Font Awesome is fully open source and is GPL friendly.
 
 **How to deploy?**
 
