@@ -2,11 +2,20 @@ html,
 body {
     margin-top: 35px;
     height: 100%;
-    background-image:
-    linear-gradient(
-        to right,
-        #136a8a, #267871
-        );
+    background-image: linear-gradient( to right, #136a8a, #267871);
+    /* Webkit (Chrome 11+) */
+    background: -webkit-linear-gradient(right, #136a8a, #267871);
+    /* IE10 */
+    background-image: -ms-linear-gradient(right, #136a8a, #267871);
+
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(right, #136a8a, #267871);
+
+    /* Opera */
+    background-image: -o-linear-gradient(right, #136a8a, #267871);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(right, #136a8a, #267871);
     }
 
 
@@ -47,7 +56,7 @@ body {
     #custom-bootstrap-menu.navbar-default {
 
         background-color: rgba(201, 201, 201, 0);
-        /* Webkit (Chrome 11+) */ 
+        /* Webkit (Chrome 11+) */
         background: -webkit-linear-gradient(top, rgba(11, 42, 77, 1) 10%, rgba(201, 201, 201, 0) 100%);
         /* IE10 */
         background-image: -ms-linear-gradient(top, rgba(11, 42, 77, 1) 10%, rgba(201, 201, 201, 0) 100%);
@@ -63,6 +72,7 @@ body {
 
 
         background: linear-gradient(to bottom, rgba(11, 42, 77, 1) 10%, rgba(201, 201, 201, 0) 100%);
+        
         border-bottom-width: 0px;
     }
     #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
