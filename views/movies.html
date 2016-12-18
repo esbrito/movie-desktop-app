@@ -13,12 +13,12 @@
         <!-- Movie Item -->
         <div class="container">
             <div class="row">
-                <div class="col-xs-4" ng-repeat="movie in movies">
+                <div class="col-md-4" ng-repeat="movie in movies">
                     <div >
                         <div class="thumbnail">
                             <img  width="100px" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}" altSrc="https://www.themoviedb.org/images/no-poster-w300_and_h450_bestv2-v2.png"  onerror="this.src = $(this).attr('altSrc')">
                             <div class="caption">
-                                <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp"  >{{movie.title}}</button>
+                                <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp" style="white-space: normal;" >{{movie.title}}</button>
                             </div>
                         </div>
                     </div>
