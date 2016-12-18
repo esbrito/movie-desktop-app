@@ -3,6 +3,7 @@
         <strong>Search!</strong> You can search by the full or partical title of the movie, in any language :-)
     </div>
     <ul class="list-group" >
+        <!-- Search bar -->
         <div align="center">
             <form ng-submit="search(query)" >
                 <input  class="img-rounded" type="text" ng-model="query" placeholder="  Search..." /><span>  </span>
@@ -12,6 +13,7 @@
 
         <br>
         <br>
+        <!-- Page controll-->
         <ul class="pager">
             <li><a type="button" ng-init="currentPageSearch=1"  ng-disabled="currentPageSearch <= 1" ng-click="previousPage(query)" style="cursor:pointer;">Previous Page</a></li>
             <li><a type="button" ng-click="nextPage(query)" style="cursor:pointer;">Next Page</a></li>
