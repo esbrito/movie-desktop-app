@@ -1,0 +1,66 @@
+<body>
+    <div class="alert alert-info" ng-if="query == undefined || query == ''  ">
+        <strong>Search!</strong> You can search by the full or partical title of the movie, in any language :-)
+    </div>
+    <ul class="list-group" >
+        <!-- Search bar -->
+        <div align="center">
+            <form ng-submit="search(query)" >
+                <input  class="img-rounded" type="text" ng-model="query" placeholder="  Search..." /><span>  </span>
+                <button type="submit" class="btn fa fa-search" ></button>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <!-- Page controll-->
+        <ul class="pager">
+            <li><a type="button" ng-init="currentPageSearch=1"  ng-disabled="currentPageSearch <= 1" ng-click="previousPage(query)" style="cursor:pointer;">Previous Page</a></li>
+            <li><a type="button" ng-click="nextPage(query)" style="cursor:pointer;">Next Page</a></li>
+        </ul>
+        <!-- Movie Item -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="movie in movies">
+                    <div >
+                        <div class="thumbnail">
+                            <img  width="100px" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}" altSrc="https://www.themoviedb.org/images/no-poster-w300_and_h450_bestv2-v2.png"  onerror="this.src = $(this).attr('altSrc')">
+                            <div class="caption">
+                                <button class="list-group-item list-group-item-info"   data-toggle="modal" ng-click="getDetail(movie)"  data-target="#popUp"  >{{movie.title}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </button>
+    <!-- Pop Up with description of the selected movie-->
+    <div id="popUp" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button  type="button" class="close"  data-dismiss="modal"></button>
+                    <h4 class="modal-title">Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div align="center">
+                        <img  ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{currentMovie.poster_path}}" altSrc="https://www.themoviedb.org/images/no-poster-w300_and_h450_bestv2-v2.png"  onerror="this.src = $(this).attr('altSrc')"> <br>
+                    </div>
+                    <h4><b>Original Title</b></h4> <p>{{currentMovie.original_title}}</p>
+                    <h4><b>Genre</b></h4> <p>{{currentMovie.currentGenres}}</p>
+                    <h4><b>Overview</b></h4> <p>{{currentMovie.overview}}</p>
+                    <h4><b>Release Date</b></h4> <p>{{currentMovie.release_date}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</ul>
+<p style="text-align: center; color: white">Page {{currentPageSearch}}</p>
+
+</body>
