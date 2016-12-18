@@ -3,7 +3,8 @@
 **What is it?**
 
 It is a website to look for upcoming movies or search a specific movie for details
-A *LIVE* version can be acessed on _http://inf.ufrgs.br/~esbrito/websitemovie/_
+
+A **LIVE** version can be acessed on _http://inf.ufrgs.br/~esbrito/websitemovie/_
 
 **What was used to build it**
 
